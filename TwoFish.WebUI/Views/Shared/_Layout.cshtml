@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - TwoFish Encyclopedia</title>
+    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <script src="~/Scripts/modernizr-2.6.2.js"></script>
+</head>
+
+<body style="background-image: url(../../Pictures/Ocean.jpg)" >
+    
+    <div class="navbar navbar-inverse navbar-fixed-top" style="background-image: url(../../Pictures/SunnySky1.jpg);border-color:black;border-width:thick;">
+        
+        <div class="container">
+
+            
+            <div style="margin:auto" class="navbar-header">
+
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse" style="color:black">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="~/Fish"><img src="~/Pictures/TwoFishLogo.jpg" alt="TwoFish" height="75" width="100" /></a> <!-- Html helpers-->
+                @Html.ActionLink("Fish", "FishList", "Fish", null, new { @class = "menuNew" })
+                @Html.ActionLink("History", "History", "Fish", null, new { @class = "menuNew" })
+                @Html.ActionLink("Habitats", "Index", "Fish", null, new { @class = "menuNew" })
+                @Html.ActionLink("Gallery", "Index", "Fish", null, new { @class = "menuNew" })
+
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav"></ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="container body-content">
+        @RenderBody()
+       
+        <footer>
+            <p style="color:white">&copy; @DateTime.Now.Year - TwoFish Encyclopedia - Andrew Bolek - 
+            <a style="color:white" href="About">  About  </a> 
+            <img src="~/Pictures/TwoFishLogo.jpg" alt="TwoFish" height="50" width="50" />  </p>
+            
+        </footer>
+    </div>
+
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+</body>
+</html>

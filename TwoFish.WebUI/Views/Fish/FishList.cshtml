@@ -1,0 +1,64 @@
+﻿@model IEnumerable<TwoFish.WebUI.Models.Fish>
+
+@{
+    ViewBag.Title = "Fish";
+}
+
+<h2></h2>
+
+<p style="margin-top:60px">
+    @Html.ActionLink("Create New", "Create", null, new { @class = "options" })
+</p>
+<table style="background-color:white" class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Type)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Weight)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.History)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Picture)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HabitatID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FishOfTheDay.Type)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Type)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Weight)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.History)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Picture)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HabitatID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FishOfTheDay.Type)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.FishID }) |
+                @Html.ActionLink("Details", "Details", new { id = item.FishID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.FishID })
+            </td>
+        </tr>
+    }
+
+</table>
